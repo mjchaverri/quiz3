@@ -1,0 +1,141 @@
+.infoCuenta {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px 5%;
+    background-color: #f7f9f9;
+    min-height: calc(100vh - 160px);
+    font-family: 'Outfit', sans-serif;
+    flex-wrap: wrap;
+}
+
+/* Common Card Style for Both Sections */
+.infoCuenta>div {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 28px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Left Card: Update Form */
+.infoCuenta>div:first-child label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2d3436;
+    font-size: 0.9rem;
+}
+
+.infoCuenta>div:first-child input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid #dfe6e9;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.infoCuenta>div:first-child input:focus {
+    border-color: #27ae60;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(39, 174, 96, 0.08);
+}
+
+.infoCuenta>div:first-child button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #27ae60;
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.infoCuenta>div:first-child button:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.25);
+}
+
+/* Right Card: Current Info */
+.infoCuenta>div:last-child h2 {
+    font-size: 1rem;
+    color: #636e72;
+    margin-bottom: 15px;
+    font-weight: 500;
+    padding: 15px;
+    background-color: #f8fbf9;
+    border-radius: 12px;
+    border-left: 4px solid #27ae60;
+}
+
+.infoCuenta>div:last-child h2 strong {
+    color: #2d3436;
+    font-weight: 700;
+}
+
+/* Action Buttons in Info Card */
+.infoCuenta>div:last-child button:nth-of-type(1) {
+    /* Delete Button */
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background-color: transparent;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.infoCuenta>div:last-child button:nth-of-type(1):hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.infoCuenta>div:last-child button:nth-of-type(2) {
+    /* Logout Button */
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background-color: #2d3436;
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.infoCuenta>div:last-child button:nth-of-type(2):hover {
+    background-color: #000000;
+}
+
+/* Responsive Tweak */
+@media (max-width: 900px) {
+    .infoCuenta {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    .infoCuenta>div {
+        max-width: 100%;
+    }
+}

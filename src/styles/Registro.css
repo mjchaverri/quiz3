@@ -1,0 +1,128 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+    background-color: #f7f9f9;
+    font-family: 'Outfit', sans-serif;
+}
+
+.register-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #f0f0f0;
+}
+
+.register-card h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2d3436;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 480px) {
+    .register-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #2d3436;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid #dfe6e9;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-input:focus {
+    border-color: #27ae60;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(39, 174, 96, 0.08);
+}
+
+.register-message {
+    min-height: 20px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #27ae60;
+    text-align: center;
+}
+
+.register-message.error {
+    color: #e74c3c;
+}
+
+.btn-register {
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    background-color: #27ae60;
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-register:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.2);
+}
+
+.register-card-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f9f9f9;
+    font-size: 0.95rem;
+    color: #636e72;
+}
+
+.register-card-footer a {
+    color: #27ae60;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.register-card-footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,111 @@
+{
+  "usuarios": [
+    {
+      "id": "f6aa",
+      "nombre": "Juan",
+      "apellido": "Perez",
+      "correo": "juan@gmail.com",
+      "password": "1234",
+      "rol": "admin"
+    },
+    {
+      "id": "c192",
+      "nombre": "cc",
+      "apellido": "cc",
+      "correo": "c@gmail.com",
+      "password": "1234",
+      "rol": "cliente"
+    }
+  ],
+  "productos": [
+    {
+      "id": "a946",
+      "nombreProducto": "Manzanas",
+      "categoriaProducto": "frutasVerduras",
+      "precioProducto": "1200",
+      "tamañoProducto": "1kg",
+      "stockProducto": "25"
+    },
+    {
+      "id": "911e",
+      "nombreProducto": "Pechuga de pollo",
+      "categoriaProducto": "carnesPescados",
+      "precioProducto": "3000",
+      "tamañoProducto": "1kg",
+      "stockProducto": "15"
+    },
+    {
+      "id": "51ca",
+      "nombreProducto": "Leche deslactosada",
+      "categoriaProducto": "lacteos",
+      "precioProducto": "1100",
+      "tamañoProducto": "1L",
+      "stockProducto": "30"
+    },
+    {
+      "id": "adaf",
+      "nombreProducto": "Pan integral",
+      "categoriaProducto": "panaderia",
+      "precioProducto": "1500",
+      "tamañoProducto": "500g",
+      "stockProducto": "20"
+    },
+    {
+      "id": "5dea",
+      "nombreProducto": "Coca Cola",
+      "categoriaProducto": "bebidas",
+      "precioProducto": "1800",
+      "tamañoProducto": "1.5L",
+      "stockProducto": "40"
+    },
+    {
+      "id": "bd71",
+      "nombreProducto": "Papas fritas",
+      "categoriaProducto": "snacks",
+      "precioProducto": "900",
+      "tamañoProducto": "150g",
+      "stockProducto": "35"
+    },
+    {
+      "id": "a3c4",
+      "nombreProducto": "Arroz",
+      "categoriaProducto": "abarrotes",
+      "precioProducto": "1300",
+      "tamañoProducto": "1kg",
+      "stockProducto": "50"
+    },
+    {
+      "id": "f89a",
+      "nombreProducto": "Helado de chocolate",
+      "categoriaProducto": "congelados",
+      "precioProducto": "2500",
+      "tamañoProducto": "1L",
+      "stockProducto": "12"
+    },
+    {
+      "id": "db56",
+      "nombreProducto": "Detergente líquido",
+      "categoriaProducto": "limpieza",
+      "precioProducto": "3200",
+      "tamañoProducto": "2L",
+      "stockProducto": "18"
+    },
+    {
+      "id": "3f5e",
+      "nombreProducto": "Shampoo para Rizos",
+      "categoriaProducto": "higiene",
+      "precioProducto": "2800",
+      "tamañoProducto": "400ml",
+      "stockProducto": "22"
+    },
+    {
+      "id": "7188",
+      "nombreProducto": "Sandía",
+      "categoriaProducto": "frutasVerduras",
+      "precioProducto": "1200",
+      "tamañoProducto": "1kg",
+      "stockProducto": "3"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

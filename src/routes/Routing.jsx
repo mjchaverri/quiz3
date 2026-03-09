@@ -8,6 +8,7 @@ import GestionUsuarios from '../pages/GestionUsuarios.jsx'
 
 
 import React from 'react'
+import Productos from '../pages/Productos.jsx'
 
 function Routing() {
   return (
@@ -19,6 +20,7 @@ function Routing() {
         <Route path="/micuenta" element={<MiCuenta />}></Route>
         <Route path="/gestionProductos" element={<GestionProductos />}></Route>
         <Route path="/gestionUsuarios" element={<GestionUsuarios />}></Route>
+        <Route path="/productos" element={<Productos />}></Route>
       </Routes>
     </Router>
   )

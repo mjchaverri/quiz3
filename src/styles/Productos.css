@@ -1,0 +1,124 @@
+/* Productos.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+
+.productos {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Outfit', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+/* Make h1 and button span the full width */
+.productos h1,
+.productos > button {
+    grid-column: 1 / -1;
+}
+
+.productos h1 {
+    font-size: 2.5rem;
+    color: #2d3436;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.productos button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    justify-self: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+}
+
+.productos button:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+}
+
+/* Style for product cards (children divs that aren't the first two elements) */
+.productos > div:not(:first-child) {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.productos > div:not(:first-child):hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: #27ae60;
+}
+
+.productos > div:not(:first-child) h2 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #2d3436;
+    font-weight: 700;
+}
+
+.productos > div:not(:first-child) p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #636e72;
+    line-height: 1.5;
+}
+
+.productos > div:not(:first-child) p:nth-of-type(1) {
+    font-weight: 500;
+    color: #27ae60;
+    background: rgba(39, 174, 96, 0.1);
+    width: fit-content;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.productos > div:not(:first-child) p:nth-of-type(2) {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2d3436;
+    margin-top: 5px;
+}
+
+.productos > div:not(:first-child) p:nth-of-type(2)::before {
+    content: "$ ";
+    color: #27ae60;
+    font-size: 1.1rem;
+}
+
+.productos > div:not(:first-child) p:nth-of-type(3) {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #b2bec3;
+}
+
+/* Media query for smaller displays */
+@media (max-width: 600px) {
+    .productos {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .productos h1 {
+        font-size: 2rem;
+    }
+}

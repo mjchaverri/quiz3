@@ -3,14 +3,23 @@ import { postData } from "../services/Servicios";
 import '../styles/RegistroUsuarios.css';
 
 function RegistroUsuarios() {
-    const [nombre, setNombre] = useState("");
-    const [apellido, setApellido] = useState("");
-    const [correo, setCorreo] = useState("");
-    const [password, setPassword] = useState("");
-    const [rol, setRol] = useState("cliente");
+    const [nombre, setNombre] = useState<string>("");
+    const [apellido, setApellido] = useState<string>("");
+    const [correo, setCorreo] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [rol, setRol] = useState<string>("cliente");
 
     async function registrarUsuario() {
-        const objUsuario = {
+
+        type Usuario = {
+            nombre: string;
+            apellido: string;
+            correo: string;
+            password: string;
+            rol: string;
+        }
+
+        const objUsuario: Usuario = {
             nombre,
             apellido,
             correo,

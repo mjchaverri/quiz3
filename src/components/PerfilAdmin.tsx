@@ -6,15 +6,15 @@ import { useNavigate } from "react-router-dom"
 
 
 function PerfilAdmin() {
-    const [nombre, setNombre] = useState("")
-    const [apellido, setApellido] = useState("")
-    const [correo, setCorreo] = useState("")
-    const [password, setPassword] = useState("")
+    const [nombre, setNombre] = useState<string>("")
+    const [apellido, setApellido] = useState<string>("")
+    const [correo, setCorreo] = useState<string>("")
+    const [password, setPassword] = useState<string>("")
     const [textoNombre, setTextoNombre] = useState(JSON.parse(localStorage.getItem("usuario")).nombre)
     const [textoApellido, setTextoApellido] = useState(JSON.parse(localStorage.getItem("usuario")).apellido)
     const [textoCorreo, setTextoCorreo] = useState(JSON.parse(localStorage.getItem("usuario")).correo)
     const navigate = useNavigate()
-    const [textoBoton, setTextoBoton] = useState(true)
+    const [textoBoton, setTextoBoton] = useState<boolean>(true)
 
 
     function manejoSesion() {
@@ -31,7 +31,13 @@ function PerfilAdmin() {
 
 
     async function actualizarUsuario() {
-        const objUsuarioEditar = {
+        type UsuarioEditar = {
+            nombre: string,
+            apellido: string,
+            correo: string
+        }
+        
+        const objUsuarioEditar: UsuarioEditar = {
             nombre: nombre,
             apellido: apellido,
             correo: correo

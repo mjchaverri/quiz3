@@ -6,23 +6,32 @@ import Modal from 'react-bootstrap/Modal'
 import { patchData } from '../services/Servicios'
 import '../styles/AdminProductos.css'
 
+interface Producto {
+  id: number;
+  nombreProducto: string;
+  categoriaProducto: string;
+  precioProducto: number;
+  tamañoProducto: string;
+  stockProducto: number;
+}
+
 function AdminProductos() {
 
-  const [productos, setProductos] = useState([])
-  const [categoriaFiltro, setCategoriaFiltro] = useState("")
+  const [productos, setProductos] = useState<Producto[]>([])
+  const [categoriaFiltro, setCategoriaFiltro] = useState<string>("")
   const productosFiltrados = productos.filter((producto) => {
     if (categoriaFiltro === "") {
       return true
     }
     return producto.categoriaProducto === categoriaFiltro
   })
-  const [modalShow, setModalShow] = useState(false)
-  const [productoEditar, setProductoEditar] = useState(null)
-  const [nombreProducto, setNombreProducto] = useState("")
-  const [categoriaProducto, setCategoriaProducto] = useState("")
-  const [precioProducto, setPrecioProducto] = useState("")
-  const [tamañoProducto, setTamañoProducto] = useState("")
-  const [stockProducto, setStockProducto] = useState("")
+  const [modalShow, setModalShow] = useState<boolean>(false)
+  const [productoEditar, setProductoEditar] = useState<Producto | null>(null)
+  const [nombreProducto, setNombreProducto] = useState<string>("")
+  const [categoriaProducto, setCategoriaProducto] = useState<string>("")
+  const [precioProducto, setPrecioProducto] = useState<number>(0)
+  const [tamañoProducto, setTamañoProducto] = useState<string>("")
+  const [stockProducto, setStockProducto] = useState<number>(0)
 
 
   async function mostrarProductos() {
@@ -34,12 +43,12 @@ function AdminProductos() {
     mostrarProductos()
   }, [])
 
-  async function eliminarProducto(id) {
+  async function eliminarProducto(id: number) {
     await deleteData("productos", id)
     mostrarProductos()
   }
 
-  function abrirEditar(producto) {
+  function abrirEditar(producto: Producto) {
 
     setProductoEditar(producto)
 
@@ -54,7 +63,15 @@ function AdminProductos() {
   }
   async function actualizarProducto() {
 
-    const objProductoEditar = {
+    type ProductoEditar = {
+      nombreProducto: string,
+      categoriaProducto: string,
+      precioProducto: number,
+      tamañoProducto: string,
+      stockProducto: number
+    }
+
+    const objProductoEditar: ProductoEditar = {
       nombreProducto,
       categoriaProducto,
       precioProducto,
@@ -62,7 +79,7 @@ function AdminProductos() {
       stockProducto
     }
 
-    await patchData("productos", objProductoEditar, productoEditar.id)
+    await patchData("productos", objProductoEditar, productoEditar?.id)
 
     setModalShow(false)
 
@@ -164,7 +181,7 @@ function AdminProductos() {
             className="modal-input-field"
             type="number"
             value={precioProducto}
-            onChange={(e) => setPrecioProducto(e.target.value)}
+            onChange={(e) => setPrecioProducto(Number(e.target.value))}
             placeholder="Precio"
           />
 
@@ -180,7 +197,7 @@ function AdminProductos() {
             className="modal-input-field"
             type="number"
             value={stockProducto}
-            onChange={(e) => setStockProducto(e.target.value)}
+            onChange={(e) => setStockProducto(Number(e.target.value))}
             placeholder="Stock"
           />
 

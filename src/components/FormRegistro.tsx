@@ -9,12 +9,12 @@ import '../styles/Registro.css'
 
 function FormRegistro() {
 
-    const [nombre, setNombre] = useState("");
-    const [apellido, setApellido] = useState("");
-    const [correo, setCorreo] = useState("");
-    const [password, setPassword] = useState("");
-    const [mensaje, setMensaje] = useState("");
-    const [usuarios, setUsuarios] = useState([])
+    const [nombre, setNombre] = useState<string>("");
+    const [apellido, setApellido] = useState<string>("");
+    const [correo, setCorreo] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [mensaje, setMensaje] = useState<string>("");
+    const [usuarios, setUsuarios] = useState<any[]>([])
 
 
     useEffect(() => {
@@ -29,7 +29,15 @@ function FormRegistro() {
 
     async function agregarUsuario() {
 
-        const objUsuario = {
+        type Usuario = {
+            nombre: string,
+            apellido: string,
+            correo: string,
+            password: string,
+            rol: string
+        }
+
+        const objUsuario : Usuario = {
             nombre,
             apellido,
             correo,

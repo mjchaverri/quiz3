@@ -12,13 +12,15 @@ import higiene from '../img/higiene.png'
 import { useEffect, useState } from 'react'
 import { getData } from "../services/Servicios";
 
-import "../styles/MainHome.css";
+import "../styles/MainHome.css,";
 import { useNavigate } from "react-router-dom";
 
 function MainHome() {
-  const [productos, setProductos] = useState([])
+  const [productos, setProductos] = useState<any[]>([] 
+    
+  )
   const navigate = useNavigate()
-  const [categoriaFiltro, setCategoriaFiltro] = useState("");
+  const [categoriaFiltro, setCategoriaFiltro] = useState<string>("");
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(() => {
     return localStorage.getItem("categoria seleccionada") || "";
   });

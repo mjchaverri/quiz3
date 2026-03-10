@@ -9,10 +9,10 @@ import '../styles/Login.css';
 
 function FormLogin() {
 
-    const [correo, setCorreo] = useState("");
-    const [password, setPassword] = useState("");
-    const [mensaje, setMensaje] = useState("");
-    const [usuarios, setUsuarios] = useState([]);
+    const [correo, setCorreo] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [mensaje, setMensaje] = useState<string>("");
+    const [usuarios, setUsuarios] = useState<any[]>([]);
     const navigate = useNavigate()
 
     useEffect(() => {

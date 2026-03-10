@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/NavBar.css';
 
 function NavBar() {
-  const [btnLogin, setBtnLogin] = useState("Iniciar Sesión")
+  const [btnLogin, setBtnLogin] = useState<string>("Iniciar Sesión")
   const [usuario, setUsuario] = useState(localStorage.getItem("usuario"))
   const navigate = useNavigate()
 

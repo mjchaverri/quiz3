@@ -4,18 +4,26 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import '../styles/AdminUsuarios.css';
 
+interface Usuario {
+    id: number;
+    nombre: string;
+    apellido: string;
+    correo: string;
+    rol: string;
+}
+
 function AdminUsuarios() {
-    const [usuarios, setUsuarios] = useState([]);
-    const [rolFiltro, setRolFiltro] = useState("");
-    const [usuariosFiltrados, setUsuariosFiltrados] = useState([]);
-    const [modalShow, setModalShow] = useState(false);
-    const [usuarioEditar, setUsuarioEditar] = useState(null);
+    const [usuarios, setUsuarios] = useState<Usuario[]>([]);
+    const [rolFiltro, setRolFiltro] = useState<string>("");
+    const [usuariosFiltrados, setUsuariosFiltrados] = useState<Usuario[]>([]);
+    const [modalShow, setModalShow] = useState<boolean>(false);
+    const [usuarioEditar, setUsuarioEditar] = useState<Usuario | null>(null);
 
     // Campos del modal
-    const [nombre, setNombre] = useState("");
-    const [apellido, setApellido] = useState("");
-    const [correo, setCorreo] = useState("");
-    const [rol, setRol] = useState("");
+    const [nombre, setNombre] = useState<string>("");
+    const [apellido, setApellido] = useState<string>("");
+    const [correo, setCorreo] = useState<string>("");
+    const [rol, setRol] = useState<string>("");
 
     // Obtener usuarios
     async function mostrarUsuarios() {
@@ -39,13 +47,13 @@ function AdminUsuarios() {
     }, [usuarios, rolFiltro]);
 
     // Eliminar usuario
-    async function eliminarUsuario(id) {
+    async function eliminarUsuario(id: number) {
         await deleteData("usuarios", id);
         mostrarUsuarios();
     }
 
     // Abrir modal para editar
-    function abrirEditar(usuario) {
+    function abrirEditar(usuario: Usuario) {
         setUsuarioEditar(usuario);
         setNombre(usuario.nombre);
         setApellido(usuario.apellido);
@@ -56,13 +64,19 @@ function AdminUsuarios() {
 
     // Actualizar usuario
     async function actualizarUsuario() {
-        const objUsuarioEditar = {
+        type UsuarioEditar ={
+            nombre: string,
+            apellido: string,
+            correo: string,
+            rol: string
+        }
+        const objUsuarioEditar : UsuarioEditar = {
             nombre,
             apellido,
             correo,
             rol
         };
-        await patchData("usuarios", objUsuarioEditar, usuarioEditar.id);
+        await patchData("usuarios", objUsuarioEditar, usuarioEditar?.id);
         setModalShow(false);
         mostrarUsuarios();
     }

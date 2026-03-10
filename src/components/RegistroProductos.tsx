@@ -4,12 +4,12 @@ import { postData } from '../services/Servicios'
 import '../styles/RegistroProductos.css'
 
 function RegistroProductos() {
-    const [nombreProducto, setNombreProducto] = useState("")
-    const [categoriaProducto, setCategoriaProducto] = useState("")
-    const [precioProducto, setPrecioProducto] = useState("")
-    const [tamañoProducto, setTamañoProducto] = useState("")
-    const [stockProducto, setStockProducto] = useState("")
-    const [mensaje, setMensaje] = useState("")
+    const [nombreProducto, setNombreProducto] = useState<string>("")
+    const [categoriaProducto, setCategoriaProducto] = useState<string>("")
+    const [precioProducto, setPrecioProducto] = useState<string>("")
+    const [tamañoProducto, setTamañoProducto] = useState<string>("")
+    const [stockProducto, setStockProducto] = useState<string>("")
+    const [mensaje, setMensaje] = useState<string>("")
 
 
     async function agregarProducto() {
@@ -19,7 +19,15 @@ function RegistroProductos() {
             return
         }
 
-        const objProducto = {
+        type Producto = {
+            nombreProducto: string,
+            categoriaProducto: string,
+            precioProducto: string,
+            tamañoProducto: string,
+            stockProducto: string
+        }
+
+        const objProducto: Producto = {
             nombreProducto,
             categoriaProducto,
             precioProducto,

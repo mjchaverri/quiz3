@@ -1,14 +1,3 @@
-import React from "react";
-import frutas from '../img/frutasyverduras.png';
-import carnes from '../img/carnes.png'
-import lacteos from '../img/lacteos.png'
-import panaderia from '../img/panaderia.png'
-import bebidas from '../img/bebidas.png'
-import snacks from '../img/snacks.png'
-import abarrotes from '../img/abarrotes.png'
-import congelados from '../img/congelados.png'
-import limpieza from '../img/limpieza.png'
-import higiene from '../img/higiene.png'
 import { useEffect, useState } from 'react'
 import { getData } from "../services/Servicios";
 
@@ -16,8 +5,8 @@ import "../styles/MainHome.css,";
 import { useNavigate } from "react-router-dom";
 
 function MainHome() {
-  const [productos, setProductos] = useState<any[]>([] 
-    
+  const [productos, setProductos] = useState<any[]>([]
+
   )
   const navigate = useNavigate()
   const [categoriaFiltro, setCategoriaFiltro] = useState<string>("");
@@ -50,7 +39,7 @@ function MainHome() {
           setCategoriaSeleccionada("frutasVerduras")
           navigate("/productos")
         }} >
-          <img src={frutas} alt="Frutas y Verduras" />
+          <img src="../img/frutasyverduras.png" alt="Frutas y Verduras" />
           <h3>Frutas y Verduras</h3>
         </div>
 
@@ -58,7 +47,7 @@ function MainHome() {
           setCategoriaSeleccionada("carnesPescados")
           navigate("/productos")
         }} >
-          <img src={carnes} alt="Carne" />
+          <img src="../img/carnes.png" alt="Carne" />
           <h3>Carnes y Pescados</h3>
         </div>
 
@@ -66,7 +55,7 @@ function MainHome() {
           setCategoriaSeleccionada("lacteos")
           navigate("/productos")
         }} >
-          <img src={lacteos} alt="Lácteos" />
+          <img src="../img/lacteos.png" alt="Lácteos" />
           <h3>Lácteos</h3>
         </div>
 
@@ -74,7 +63,7 @@ function MainHome() {
           setCategoriaSeleccionada("panaderia")
           navigate("/productos")
         }} >
-          <img src={panaderia} alt="Panadería" />
+          <img src="../img/panaderia.png" alt="Panadería" />
           <h3>Panadería</h3>
         </div>
 
@@ -82,7 +71,7 @@ function MainHome() {
           setCategoriaSeleccionada("bebidas")
           navigate("/productos")
         }} >
-          <img src={bebidas} alt="Bebidas" />
+          <img src="../img/bebidas.png" alt="Bebidas" />
           <h3>Bebidas</h3>
         </div>
 
@@ -90,7 +79,7 @@ function MainHome() {
           setCategoriaSeleccionada("snacks")
           navigate("/productos")
         }} >
-          <img src={snacks} alt="Snacks" />
+          <img src="../img/snacks.png" alt="Snacks" />
           <h3>Snacks</h3>
         </div>
 
@@ -98,7 +87,7 @@ function MainHome() {
           setCategoriaSeleccionada("abarrotes")
           navigate("/productos")
         }} >
-          <img src={abarrotes} alt="Abarrotes" />
+          <img src="../img/abarrotes.png" alt="Abarrotes" />
           <h3>Abarrotes</h3>
         </div>
 
@@ -106,7 +95,7 @@ function MainHome() {
           setCategoriaSeleccionada("congelados")
           navigate("/productos")
         }} >
-          <img src={congelados} alt="Congelados" />
+          <img src="../img/congelados.png" alt="Congelados" />
           <h3>Congelados</h3>
         </div>
 
@@ -114,7 +103,7 @@ function MainHome() {
           setCategoriaSeleccionada("limpieza")
           navigate("/productos")
         }} >
-          <img src={limpieza} alt="Limpieza del Hogar" />
+          <img src="../img/limpieza.png" alt="Limpieza del Hogar" />
           <h3>Limpieza del Hogar</h3>
         </div>
 
@@ -122,7 +111,7 @@ function MainHome() {
           setCategoriaSeleccionada("higiene")
           navigate("/productos")
         }} >
-          <img src={higiene} alt="Higiene Personal" />
+          <img src="../img/higiene.png" alt="Higiene Personal" />
           <h3>Higiene Personal</h3>
         </div>
       </div>

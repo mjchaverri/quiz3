@@ -1,18 +1,21 @@
 import { useState } from "react"
 import { useEffect } from "react"
-import { patchData } from "../services/ServicioUsuarios"
-import { deleteData } from "../services/ServicioUsuarios"
 import { useNavigate } from "react-router-dom"
-
-
+import { patchData } from "../services/Servicios"
+import { deleteData } from "../services/Servicios"
 function PerfilAdmin() {
     const [nombre, setNombre] = useState<string>("")
     const [apellido, setApellido] = useState<string>("")
     const [correo, setCorreo] = useState<string>("")
     const [password, setPassword] = useState<string>("")
-    const [textoNombre, setTextoNombre] = useState(JSON.parse(localStorage.getItem("usuario")).nombre)
-    const [textoApellido, setTextoApellido] = useState(JSON.parse(localStorage.getItem("usuario")).apellido)
-    const [textoCorreo, setTextoCorreo] = useState(JSON.parse(localStorage.getItem("usuario")).correo)
+    
+    // Get user from localStorage safely
+    const storedUser = localStorage.getItem("usuario")
+    const user = storedUser ? JSON.parse(storedUser) : {}
+
+    const [textoNombre, setTextoNombre] = useState<string>(user.nombre || "")
+    const [textoApellido, setTextoApellido] = useState<string>(user.apellido || "")
+    const [textoCorreo, setTextoCorreo] = useState<string>(user.correo || "")
     const navigate = useNavigate()
     const [textoBoton, setTextoBoton] = useState<boolean>(true)
 
@@ -42,13 +45,21 @@ function PerfilAdmin() {
             apellido: apellido,
             correo: correo
         }
-        await patchData("usuarios", objUsuarioEditar, JSON.parse(localStorage.getItem("usuario")).id)
+        
+        const storedUser = localStorage.getItem("usuario")
+        if (storedUser) {
+            const user = JSON.parse(storedUser)
+            await patchData("usuarios", objUsuarioEditar, user.id)
+        }
     }
 
     async function eliminarUsuario() {
-        const usuarioEliminado = await deleteData("usuarios", JSON.parse(localStorage.getItem("usuario")).id)
-        console.log(usuarioEliminado);
-
+        const storedUser = localStorage.getItem("usuario")
+        if (storedUser) {
+            const user = JSON.parse(storedUser)
+            const usuarioEliminado = await deleteData("usuarios", user.id)
+            console.log(usuarioEliminado);
+        }
     }
 
     return (

@@ -7,8 +7,9 @@ import GestionProductos from '../pages/GestionProductos.jsx'
 import GestionUsuarios from '../pages/GestionUsuarios.jsx'
 
 
-import React from 'react'
+
 import Productos from '../pages/Productos.jsx'
+import PrivateRoutes from './PrivateRoute'
 
 function Routing() {
   return (
@@ -18,9 +19,10 @@ function Routing() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="registro" element={<Registro />}></Route>
         <Route path="/micuenta" element={<MiCuenta />}></Route>
-        <Route path="/gestionProductos" element={<GestionProductos />}></Route>
-        <Route path="/gestionUsuarios" element={<GestionUsuarios />}></Route>
+        <Route path="/gestionProductos" element={<PrivateRoutes><GestionProductos /></PrivateRoutes>}></Route>
+        <Route path="/gestionUsuarios" element={<PrivateRoutes><GestionUsuarios /></PrivateRoutes>}></Route>
         <Route path="/productos" element={<Productos />}></Route>
+
       </Routes>
     </Router>
   )
